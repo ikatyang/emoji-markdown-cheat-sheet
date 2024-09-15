@@ -1563,7 +1563,8 @@ This cheat sheet is automatically generated from [GitHub Emoji API](https://api.
 | [top](#flags) | :wallis_futuna: | `:wallis_futuna:` | :samoa: | `:samoa:` | [top](#table-of-contents) |
 | [top](#flags) | :kosovo: | `:kosovo:` | :yemen: | `:yemen:` | [top](#table-of-contents) |
 | [top](#flags) | :mayotte: | `:mayotte:` | :south_africa: | `:south_africa:` | [top](#table-of-contents) |
-| [top](#flags) | :zambia: | `:zambia:` | :zimbabwe: | `:zimbabwe:` | [top](#table-of-contents) |
+| [top](#flags) | :zambia: | `:zambia:` | :zimbabwe: | `:zimbabwe:` | [top](#table-of-contents) | 
+| [top](#github-custom-emoji) | :suspect: | `:suspect:` | :trollface: | `:trollface:` | [top](#table-of-contents) |
 
 #### Subdivision Flag
 
