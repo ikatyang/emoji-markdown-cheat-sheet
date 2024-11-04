@@ -1,3 +1,4 @@
+![IMG_20240822_203932_521](https://github.com/user-attachments/assets/7666060a-7412-457e-a536-35fba1c1ab2f)
 # emoji-cheat-sheet
 
 [![Up to Date](https://github.com/ikatyang/emoji-cheat-sheet/workflows/Up%20to%20Date/badge.svg)](https://github.com/ikatyang/emoji-cheat-sheet/actions?query=workflow%3A%22Up+to+Date%22)
