@@ -1,4 +1,80 @@
-# emoji-cheat-sheet
+| Rank | THING-TO-RANK |
+|-----:|---------------|
+|     1|               |
+|     2|               |
+|     3|               |
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
+ <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
+ <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
+</picture>
+latest-codegen-masternpm install --save stripe@13.4.0stripe@13.4.0const express = require("express");
+const app = express();
+
+const stripe = require("stripe")(
+  // This is your test secret API key.
+  'sk_test_51PBoDsRwsNOvstcVOOISyKYFrLSRYNTcbZqzjygubNRzk1yzlzWLfob3pJDFzbh7sWhDySrhLiexmIQjHFBbxMOE00Cr36Es5G',
+  {
+    apiVersion: "2023-10-16",
+  }
+);
+
+app.use(express.static("dist"));
+app.use(express.json());
+
+app.post("/account_link", async (req, res) => {
+  try {
+    const { account } = req.body;
+
+    const accountLink = await stripe.accountLinks.create({
+      account: account,
+      return_url: `${req.headers.origin}/return/${account}`,
+      refresh_url: `${req.headers.origin}/refresh/${account}`,
+      type: "account_onboarding",
+    });
+
+    res.json(accountLink);
+  } catch (error) {
+    console.error(
+      "An error occurred when calling the Stripe API to create an account link:",
+      error
+    );
+    res.status(500);
+    res.send({ error: error.message });
+  }
+});
+
+app.post("/account", async (req, res) => {
+  try {
+    const account = await stripe.accounts.create({
+      controller: {
+        fees: {
+          payer: "application"
+        },
+        losses: {
+          payments: "application"
+        },
+      },
+    });
+
+    res.json({
+      account: account.id,
+    });
+  } catch (error) {
+    console.error(
+      "An error occurred when calling the Stripe API to create an account",
+      error
+    );
+    res.status(500);
+    res.send({ error: error.message });
+  }
+});
+
+app.get("/*", (_req, res) => {
+  res.sendFile(__dirname + "/dist/index.html");
+});
+
+app.listen(4242, () => console.log("Node server listening on port 4242! Visit http://localhost:4242 in your browser."));app.postaccount.iderror.messagehttp://localhost:4242# emoji-cheat-sheet
 
 [![Up to Date](https://github.com/ikatyang/emoji-cheat-sheet/workflows/Up%20to%20Date/badge.svg)](https://github.com/ikatyang/emoji-cheat-sheet/actions?query=workflow%3A%22Up+to+Date%22)
 
